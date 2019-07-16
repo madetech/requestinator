@@ -8,7 +8,6 @@ class Gateway::GoogleSpreadsheet
     service.authorization = Google::Auth::ServiceAccountCredentials.make_creds(
       scope: Google::Apis::SheetsV4::AUTH_SPREADSHEETS
     )
-
     spreadsheet_id = '1zQqNDF8rWBruqVE9c1LRaAm1sIWe5_axbm7GGIYsHAw'
     range = 'request_responses!A1:O'
 
