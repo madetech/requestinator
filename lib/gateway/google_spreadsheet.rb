@@ -13,6 +13,6 @@ class Gateway::GoogleSpreadsheet
 
     response = service.get_spreadsheet_values(spreadsheet_id, range)
 
-    response.values
+    response.values.drop(1)
   end
 end

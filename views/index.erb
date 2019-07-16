@@ -51,22 +51,25 @@
           <div class="col p-4 d-flex flex-column position-static">
 
             <ul class="progressbar">
-                <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE'|| request[14] == 'TRUE'%>">Submited</li>
-                <li class="<%= 'active' if request[13] == 'TRUE' || request[14] == 'TRUE' %>">In progress</li>
-                <li class="<%= 'active' if request[14] == 'TRUE'%>">Resolved</li>
+                <li class="active">Submited</li>
+                <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE' %>">In progress</li>
+                <li class="<%= 'active' if request[13] == 'TRUE'%>">Resolved</li>
           </ul>
 
-          <p><%= request[0]%></p>
-          <p><%= request[1]%></p>
-          <p><%= request[2]%></p>
-          <p><%= request[3]%></p>
-          <p><%= request[4]%></p>
-          <p><%= request[5]%></p>
-          <p><%= request[6]%></p>
-          <p><%= request[7]%></p>
-          <p><%= request[8]%></p>
-          <p><%= request[9]%></p>
-          <p><%= request[10]%></p>
+          <h2></h2>
+          <p>Submitted at:<%= request[0]%></p>
+          <p>Sumbmited by: <%=request[2]%>, <%=request[1]%></p>
+          <h2>Client Information</h2>
+          <p>Client: <%= request[3]%></p>
+          <p>Client stream: <%= request[4]%></p>
+          <p>Duration: <%= request[5]%></p>
+          <p>Location: <%= request[6]%></p>
+          <p>Urgency: <%= request[7]%></p>
+          <h2>Team Shape</h2>
+          <p>Team size: <%= request[8]%></p>
+          <p>Skills required: <%= request[9]%></p>
+          <p>Seniority: <%= request[10]%></p>
+          <h2>Additional information</h2>
           <p><%= request[11]%></p>
           </div>
         </div>
