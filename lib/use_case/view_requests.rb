@@ -6,10 +6,12 @@ class UseCase::ViewRequests
   end
 
   def execute
+    condensed_data = []
     @google_spreadsheet_gateway.all.each do |row|
       if(row[0] != "")
-        row
+        condensed_data << row
       end
     end
+    condensed_data
   end
 end
