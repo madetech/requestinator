@@ -46,14 +46,15 @@
 
     <main class="container mb-5 mt-5">
       <div class="col-md-12">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDAQMB2MzO5Ic7PR8F22H-5TLwh5diYr1tPkq_DxeOSJ2-A/viewform" class="btn btn-outline-success float-right ml-3" >Submit Request</a>
         <% data.each do |request| %>
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
 
-            <ul class="progressbar">
-                <li class="active">Submited</li>
-                <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE' %>">In progress</li>
-                <li class="<%= 'active' if request[13] == 'TRUE'%>">Resolved</li>
+          <ul class="progressbar">
+            <li class="active">Submited</li>
+            <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE' %>">In progress</li>
+            <li class="<%= 'active' if request[13] == 'TRUE'%>">Resolved</li>
           </ul>
 
           <h2></h2>
