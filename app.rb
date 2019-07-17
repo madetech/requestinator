@@ -13,11 +13,18 @@ loader.setup
 before { loader.reload }
 
 get '/' do
-
   response = UseCase::ViewRequests.new(
     google_spreadsheet_gateway: Gateway::GoogleSpreadsheet.new
   ).execute
 
   erb :index, locals: { data: response }
+end
+
+get '/resolved_requests' do
+  response = UseCase::ViewResolvedRequests.new(
+    google_spreadsheet_gateway: Gateway::GoogleSpreadsheet.new
+  ).execute
+
+  erb :resolved_requests, locals: { data: response }
 end
 

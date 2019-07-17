@@ -44,14 +44,14 @@
 
     <main class="container mb-5 mt-5">
       <div class="text-center">
-      <h1> Ongoing Requests</h1>
+        <h1> Resolved Requests</h1>
         <a href="/" class="btn btn-outline-success mb-3" >View ongoing requests</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDAQMB2MzO5Ic7PR8F22H-5TLwh5diYr1tPkq_DxeOSJ2-A/viewform" class="btn btn-outline-success mb-3" >Submit a request</a>
         <a href="/resolved_requests" class="btn btn-outline-success mb-3" >View resolved requests</a>
       </div>
       <div class="col-md-12">
         <% data.each do |request| %>
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="row no-gutters border border-success rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
           <ul class="progressbar">
             <li class="active">Submited</li>
