@@ -70,15 +70,15 @@
 
           <p class="mb-1 text-muted text-right" >Submited by: <%=request[1]%></p>
 
-          <% if request[14].nil? %>
+          <% if request[11].empty? %>
             <div hidden class="border border-success rounded mb-3 mt-3">
               <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[14]%></p>
+              <p class="ml-3 mr-3"><%= request[11]%></p>
             </div>
           <% else %>
             <div class="border border-success rounded mb-3 mt-3">
               <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[14]%></p>
+              <p class="ml-3 mr-3"><%= request[11]%></p>
             </div>
           <% end %>
 

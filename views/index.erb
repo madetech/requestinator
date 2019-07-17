@@ -50,6 +50,10 @@
         <a href="/resolved_requests" class="btn btn-outline-success mb-3" >View resolved requests</a>
       </div>
       <div class="col-md-12">
+        <% if data.empty? %>
+          <h4 class="text-center"> There are no ongoing requests currently </h4>
+        <% end %>
+
         <% data.each do |request| %>
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
@@ -70,15 +74,15 @@
 
           <p class="mb-1 text-muted text-right" >Submited by: <%=request[1]%></p>
 
-          <% if request[14].nil? %>
+          <% if request[11].empty? %>
             <div hidden class="border border-success rounded mb-3 mt-3">
               <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[14]%></p>
+              <p class="ml-3 mr-3"><%= request[11]%></p>
             </div>
           <% else %>
             <div class="border border-success rounded mb-3 mt-3">
               <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[14]%></p>
+              <p class="ml-3 mr-3"><%= request[11]%></p>
             </div>
           <% end %>
 
