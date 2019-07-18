@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-class UseCase::ViewRequests
+class UseCase::ViewResolvedRequests
   def initialize(google_spreadsheet_gateway:)
     @google_spreadsheet_gateway = google_spreadsheet_gateway
   end
 
   def execute
-    condensed_data = []
+    resolved_requests = []
     @google_spreadsheet_gateway.all.each do |row|
-      if row[0] != "" && row[13] == "FALSE"
-        condensed_data << row
+      if row[0] != "" && row[13] == "TRUE"
+        resolved_requests << row
       end
     end
-    condensed_data
+    resolved_requests
   end
 end
