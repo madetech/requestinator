@@ -74,18 +74,6 @@
 
           <p class="mb-1 text-muted text-right" >Submited by: <%=request[1]%></p>
 
-          <% if request[11].empty? %>
-            <div hidden class="border border-success rounded mb-3 mt-3">
-              <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[11]%></p>
-            </div>
-          <% else %>
-            <div class="border border-success rounded mb-3 mt-3">
-              <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[11]%></p>
-            </div>
-          <% end %>
-
           <h2 class="mt-0">Client Information</h2>
           <p>Client: <%= request[3]%></p>
           <p>Client stream: <%= request[4]%></p>
