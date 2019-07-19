@@ -3,7 +3,7 @@
 class GoogleSheetsSimulator
   def all
     [
-      "2019-07-01",
+      ["2019-07-01",
       "george@madetech.com",
       "George",
       "MoJ",
@@ -14,6 +14,18 @@ class GoogleSheetsSimulator
       "1",
       "React",
       "Software Engineer", "comment", "FALSE", "FALSE", "response"
+      ],
+      ["2019-07-01",
+        "george@madetech.com",
+        "Bob",
+        "MoJ",
+        "Requestinator",
+        "5 weeks",
+        "Manchester",
+        "10/10/10",
+        "1",
+        "React",
+        "Software Engineer", "comment", "TRUE", "TRUE", "response"],
     ]
   end
 end
