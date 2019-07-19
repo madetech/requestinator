@@ -45,3 +45,6 @@
 .progressbar li.active + li:after {
   background-color: green;
 }
+.style-logo{
+  top: -2px;
+}

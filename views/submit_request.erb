@@ -30,7 +30,7 @@
                 <div class="header_logo_type--by">
                   <span class="header_logo_type__text">Requests</span>
                   <span class="px-3">by</span>
-                  <span class="position-relative style-logo">
+                  <span class="position-relative style-logo" >
                   <img alt="Made Tech" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="120px">
                 </span>
                 </div>
@@ -44,52 +44,14 @@
 
     <main class="container mb-5 mt-5">
       <div class="text-center">
-      <h1> Ongoing Requests</h1>
+      <div class="text-center">
+      <h1>Submit a Request</h1>
         <a href="/" class="btn btn-outline-success mb-3" >View ongoing requests</a>
-        <a href="/submit_request" class="btn btn-outline-success mb-3" >Submit a request</a>
         <a href="/resolved_requests" class="btn btn-outline-success mb-3" >View resolved requests</a>
       </div>
-      <div class="col-md-12">
-        <% if data.empty? %>
-          <h4 class="text-center"> There are no ongoing requests currently </h4>
-        <% end %>
-
-        <% data.each do |request| %>
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-          <ul class="progressbar">
-            <li class="active">Submited</li>
-            <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE' %>">In progress</li>
-            <li class="<%= 'active' if request[13] == 'TRUE'%>">Resolved</li>
-          </ul>
-
-          <% difference = Date.today - Date.parse(request[0])%>
-          <% if difference > 1 %>
-            <i class="mb-1 text-muted text-right">Requested <%= difference.to_i %> days ago</i>
-          <% elsif difference < 1 %>
-            <i class="mb-1 text-muted text-right">Requested today</i>
-          <% else %>
-            <i class="mb-1 text-muted text-right">Requested <%= difference.to_i %> day ago</i>
-          <% end %>
-
-          <p class="mb-1 text-muted text-right" >Submited by: <%=request[1]%></p>
-
-          <h2 class="mt-0">Client Information</h2>
-          <p>Client: <%= request[3]%></p>
-          <p>Client stream: <%= request[4]%></p>
-          <p>Start date: <%= request[7]%></p>
-          <p>Duration: <%= request[5]%></p>
-          <p>Location: <%= request[6]%></p>
-          <h2>Team Shape</h2>
-          <p>Team size: <%= request[8]%></p>
-          <p>Skills required: <%= request[9]%></p>
-          <p>Seniority: <%= request[10]%></p>
-          <h2>Project context</h2>
-          <p><%= request[11]%></p>
-          </div>
-        </div>
-        <% end %>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRDAQMB2MzO5Ic7PR8F22H-5TLwh5diYr1tPkq_DxeOSJ2-A/viewform?embedded=true" width="640" height="2044" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
       </div>
+     
     </main>
 
     <footer class="footer">
