@@ -28,3 +28,8 @@ get '/resolved_requests' do
   erb :resolved_requests, locals: { data: response }
 end
 
+get '/submit_request' do 
+  erb :submit_request
+end
+
+
