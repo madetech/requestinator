@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sheets.googleapis.com/v4/spreadsheets/1zQqNDF8rWBruqVE9c1LRaAm1sIWe5_axbm7GGIYsHAw/values/request_responses!A1:O
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Some application name/0.0.0 google-api-ruby-client/0.30.6 Mac OS X/10.14.5
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Fri, 19 Jul 2019 09:09:23 GMT
+      Authorization:
+      - Bearer ya29.c.EllKB8UemuKRALTDdKXOEt_VtjAdrJ88j7Tj-GVtgn8bEl50K1LJuyjGa4PVCoyyVgDAg0xo54x7Ty137AQWpLf99hI8bV2CGPArX4P1uSBokTrrCj_O59O_3Q
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Fri, 19 Jul 2019 09:09:23 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "range": "request_responses!A1:O103",
+          "majorDimension": "ROWS",
+          "values": [
+            [
+              "Timestamp",
+              "Email address",
+              "Requested by",
+              "Client Name",
+              "Project Name",
+              "Duration",
+              "Location",
+              "Start date",
+              "Number of people",
+              "Skills Required",
+              "Seniority",
+              "Project Context",
+              "In Progress",
+              "Done",
+              "Operations response"
+            ],
+            [
+              "10/07/2019 10:48:36",
+              "maysa@madetech.com",
+              "Maysa",
+              "Made Tech",
+              "Requestinator",
+              "2 weeks",
+              "London Bridge",
+              "10/10/10",
+              "1",
+              "Ruby",
+              "Software Engineer",
+              "Project is bulfing stuff",
+              "TRUE",
+              "TRUE",
+              "Yes all good!"
+            ],
+            [
+              "18/07/2019 10:22:11",
+              "daniel@madetech.com",
+              "Daniel Williams",
+              "Google",
+              "Super Top Secret",
+              "4 years",
+              "The Moon",
+              "10/10/10",
+              "45",
+              "Welding",
+              "Very senior",
+              "",
+              "FALSE",
+              "FALSE"
+            ],
+            [
+              "2019-07-01",
+              "george@madetech.com",
+              "George",
+              "MoJ",
+              "Requestinator",
+              "2 weeks",
+              "Manchester",
+              "10/10/10",
+              "1",
+              "React",
+              "Software Engineer",
+              "comment",
+              "FALSE",
+              "FALSE",
+              "response"
+            ]
+          ]
+        }
+    http_version:
+  recorded_at: Fri, 19 Jul 2019 09:09:23 GMT
+recorded_with: VCR 5.0.0

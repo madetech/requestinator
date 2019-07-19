@@ -4,17 +4,19 @@ describe 'the requestinator' do
   let(:response) { view_requests.execute }
 
   it 'views all delivery teams' do
-    expect(response[1]).to eq([
-      "2019-07-01",
-      "george@madetech.com",
-      "George",
-      "MoJ",
-      "Requestinator",
-      "2 weeks",
-      "Manchester",
-      "10/10/10",
-      "1",
-      "React",
-      "Software Engineer", "comment", "FALSE", "FALSE", "response"])
+    VCR.use_cassette('response') do
+      expect(response[1]).to eq([
+        "2019-07-01",
+        "george@madetech.com",
+        "George",
+        "MoJ",
+        "Requestinator",
+        "2 weeks",
+        "Manchester",
+        "10/10/10",
+        "1",
+        "React",
+        "Software Engineer", "comment", "FALSE", "FALSE", "response"])
+    end
   end
 end

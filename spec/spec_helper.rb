@@ -18,3 +18,10 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
 end
+
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/test_requests'
+  config.hook_into :webmock
+  config.ignore_request { |request| request.uri == 'https://www.googleapis.com/oauth2/v4/token' }
+end

@@ -6,6 +6,7 @@ describe UseCase::ViewRequests do
   let(:response) { view_unresolved_requests.execute }
 
   it 'can show client as the first key for the data' do
+    VCR.use_cassette('response') do
       expect(response[1]).to eq(["2019-07-01",
         "george@madetech.com",
         "George",
@@ -19,5 +20,6 @@ describe UseCase::ViewRequests do
         "Software Engineer",
         "comment",
         "FALSE", "FALSE", "response"])
+    end
   end
 end
