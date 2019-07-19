@@ -12,17 +12,22 @@ loader.setup
 
 before { loader.reload }
 
+
 get '/' do
+  gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
+
   response = UseCase::ViewRequests.new(
-    google_spreadsheet_gateway: Gateway::GoogleSpreadsheet.new
+    google_spreadsheet_gateway: gateway
   ).execute
 
   erb :index, locals: { data: response }
 end
 
 get '/resolved_requests' do
+  gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
+
   response = UseCase::ViewResolvedRequests.new(
-    google_spreadsheet_gateway: Gateway::GoogleSpreadsheet.new
+    google_spreadsheet_gateway: gateway
   ).execute
 
   erb :resolved_requests, locals: { data: response }

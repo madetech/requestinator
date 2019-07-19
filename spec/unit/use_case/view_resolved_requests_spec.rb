@@ -6,6 +6,7 @@ describe UseCase::ViewResolvedRequests do
   let(:response) { view_resolved_requests.execute }
 
   it 'can show client as the first key for the data' do
+    VCR.use_cassette('response') do
       expect(response[0]).to eq(["10/07/2019 10:48:36",
         "maysa@madetech.com",
         "Maysa",
@@ -13,5 +14,6 @@ describe UseCase::ViewResolvedRequests do
         "Requestinator",
         "2 weeks", "London Bridge", "10/10/10", "1", "Ruby", "Software Engineer",
         "Project is bulfing stuff", "TRUE", "TRUE", "Yes all good!"])
+    end
   end
 end
