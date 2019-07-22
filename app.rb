@@ -12,7 +12,6 @@ loader.setup
 
 before { loader.reload }
 
-
 get '/' do
   gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
 
@@ -33,7 +32,7 @@ get '/resolved_requests' do
   erb :resolved_requests, locals: { data: response }
 end
 
-get '/submit_request' do 
+get '/submit_request' do
   erb :submit_request
 end
 
