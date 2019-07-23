@@ -43,6 +43,16 @@
     <div class="jumbotron jumbotron-skinny"></div>
 
     <main class="container mb-5 mt-5">
+      <div class="row text-center">
+        <div class="col-sm-6 mb-5">
+          <h5 class="text-success">Total Submitted Requests</h5>
+          <h4 class="text-success"><%= summary_data[:active] %></h4>
+        </div>
+        <div class="col-sm-6 mb-5">
+          <h5 class="text-success">Requests in Progress</h5>
+          <h4 class="text-success"><%=summary_data[:in_progress] %></h4>
+        </div>
+      </div>
       <div class="text-center">
         <h1> Resolved Requests</h1>
         <a href="/" class="btn btn-outline-success mb-3" >View ongoing requests</a>
