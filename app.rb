@@ -17,10 +17,14 @@ get '/' do
   gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
 
   response = UseCase::ViewRequests.new(
+    google_spreadsheet_gateway: Gateway::GoogleSpreadsheet.new
+  ).execute
+
+  response_summary = UseCase::ViewRequestsSummary.new(
     google_spreadsheet_gateway: gateway
   ).execute
 
-  erb :index, locals: { data: response }
+  erb :index, locals: { data: response, summary_data: response_summary}
 end
 
 get '/resolved_requests' do
@@ -30,11 +34,13 @@ get '/resolved_requests' do
     google_spreadsheet_gateway: gateway
   ).execute
 
-  erb :resolved_requests, locals: { data: response }
+  response_summary = UseCase::ViewRequestsSummary.new(
+    google_spreadsheet_gateway: gateway
+  ).execute
+
+  erb :resolved_requests, locals: { data: response, summary_data: response_summary}
 end
 
 get '/submit_request' do 
   erb :submit_request
 end
-
-
