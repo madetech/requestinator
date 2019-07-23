@@ -17,7 +17,7 @@ get '/' do
   gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
 
   response = UseCase::ViewRequests.new(
-    google_spreadsheet_gateway: Gateway::GoogleSpreadsheet.new
+    google_spreadsheet_gateway: gateway
   ).execute
 
   response_summary = UseCase::ViewRequestsSummary.new(
