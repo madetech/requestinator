@@ -12,6 +12,9 @@ loader.setup
 
 before { loader.reload }
 
+use Rack::Auth::Basic, "Protected Area" do |username, password|
+  username == ENV['USERNAME'] && password == ENV['PASSWORD']
+end
 
 get '/' do
   gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
@@ -41,6 +44,6 @@ get '/resolved_requests' do
   erb :resolved_requests, locals: { data: response, summary_data: response_summary}
 end
 
-get '/submit_request' do 
+get '/submit_request' do
   erb :submit_request
 end
