@@ -42,26 +42,26 @@
     </header>
     <div class="jumbotron jumbotron-skinny"></div>
 
-    <main class="container mb-5 mt-5">
+    <main class="container mb-5 mt-3">
       <div class="row text-center">
-        <div class="col-sm-6 mb-5">
-          <h5 class="text-success">Total Submitted Requests</h5>
+        <div class="col-sm-6 mb-2">
+          <h5 class="text-success">Total Submitted Team Requests</h5>
           <h4 class="text-success"><%= summary_data[:active] %></h4>
         </div>
-        <div class="col-sm-6 mb-5">
-          <h5 class="text-success">Requests in Progress</h5>
+        <div class="col-sm-6 mb-2">
+          <h5 class="text-success">Team Requests in Progress</h5>
           <h4 class="text-success"><%=summary_data[:in_progress] %></h4>
         </div>
       </div>
-      <div class="text-center mb-3">
-      <h1> Ongoing Requests</h1>
-        <a href="/" class="btn btn-outline-success mb-3" >View ongoing requests</a>
-        <a href="/submit_request" class="btn btn-outline-success mb-3" >Submit a request</a>
-        <a href="/resolved_requests" class="btn btn-outline-success mb-3" >View resolved requests</a>
+      <div class="text-center">
+      <h1> Ongoing Team Requests</h1>
+        <a href="/" class="btn btn-outline-success mb-3" >View ongoing team requests</a>
+        <a href="/submit_request" class="btn btn-outline-success mb-3" >Submit a team request</a>
+        <a href="/resolved_requests" class="btn btn-outline-success mb-3" >View resolved team requests</a>
       </div>
       <div class="col-md-12">
         <% if data.empty? %>
-          <h4 class="text-center"> There are no ongoing requests currently </h4>
+          <h4 class="text-center"> There are currently no ongoing team requests</h4>
         <% end %>
 
       <% data.each_with_index do |request, index| %>
