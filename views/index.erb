@@ -64,53 +64,64 @@
           <h4 class="text-center"> There are currently no ongoing team requests</h4>
         <% end %>
 
-        <% data.each do |request| %>
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-          <ul class="progressbar">
-            <li class="active">Submited</li>
-            <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE' %>">In progress</li>
-            <li class="<%= 'active' if request[13] == 'TRUE'%>">Resolved</li>
-          </ul>
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+        <% data.each_with_index do |request, index| %>
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0 mt-0 text-center">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%=index%>" aria-expanded="true" aria-controls="collapseOne">
+                    Team request from <%= request[3]%> for <%= request[4]%>
+                  </button>
+                </h2>
+              </div>
 
-          <% difference = Date.today - Date.parse(request[0])%>
-          <% if difference > 1 %>
-            <i class="mb-1 text-muted text-right">Requested <%= difference.to_i %> days ago</i>
-          <% elsif difference < 1 %>
-            <i class="mb-1 text-muted text-right">Requested today</i>
-          <% else %>
-            <i class="mb-1 text-muted text-right">Requested <%= difference.to_i %> day ago</i>
-          <% end %>
+            <div id="collapse<%=index%>" class="collapse" data-parent="#accordionExample">
+              <div class="card-body">
+              <ul class="progressbar">
+                <li class="active">Submited</li>
+                <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE' %>">In progress</li>
+                <li class="<%= 'active' if request[13] == 'TRUE'%>">Resolved</li>
+              </ul>
 
-          <p class="mb-1 text-muted text-right" >Submited by: <%=request[1]%></p>
+              <% difference = Date.today - Date.parse(request[0])%>
+              <% if difference > 1 %>
+                <i class="mb-1 text-muted float-right">Requested <%= difference.to_i %> days ago</i>
+              <% elsif difference < 1 %>
+                <i class="mb-1 text-muted float-right">Requested today</i>
+              <% else %>
+                <i class="mb-1 text-muted float-right">Requested <%= difference.to_i %> day ago</i>
+              <% end %>
 
-          <% if request[14].nil? %>
-            <div hidden class="border border-success rounded mb-3 mt-3">
-              <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[14]%></p>
+              <i class="mb-1 text-muted text-left" >Submited by: <%=request[1]%></i>
+
+              <% if request[14].nil? %>
+                <div hidden class="border border-success rounded mb-3 mt-3">
+                  <h2 class="text-success text-center">Operations Response</h2>
+                  <p class="ml-3 mr-3"><%= request[14]%></p>
+                </div>
+              <% else %>
+                <div class="border border-success rounded mb-3 mt-3">
+                  <h2 class="text-success text-center">Operations Response</h2>
+                  <p class="ml-3 mr-3"><%= request[14]%></p>
+                </div>
+              <% end %>
+
+              <h2 class="mt-4">Client Information</h2>
+              <p>Client: <%= request[3]%></p>
+              <p>Client stream: <%= request[4]%></p>
+              <p>Start date: <%= request[7]%></p>
+              <p>Duration: <%= request[5]%></p>
+              <p>Location: <%= request[6]%></p>
+              <h2>Team Shape</h2>
+              <p>Team size: <%= request[8]%></p>
+              <p>Skills required: <%= request[9]%></p>
+              <p>Seniority: <%= request[10]%></p>
+              <h2>Project context</h2>
+              <p><%= request[11]%></p>
+              </div>
             </div>
-          <% else %>
-            <div class="border border-success rounded mb-3 mt-3">
-              <h2 class="text-success text-center">Operations Response</h2>
-              <p class="ml-3 mr-3"><%= request[14]%></p>
-            </div>
           <% end %>
-
-          <h2 class="mt-0">Client Information</h2>
-          <p>Client: <%= request[3]%></p>
-          <p>Client stream: <%= request[4]%></p>
-          <p>Start date: <%= request[7]%></p>
-          <p>Duration: <%= request[5]%></p>
-          <p>Location: <%= request[6]%></p>
-          <h2>Team Shape</h2>
-          <p>Team size: <%= request[8]%></p>
-          <p>Skills required: <%= request[9]%></p>
-          <p>Seniority: <%= request[10]%></p>
-          <h2>Project context</h2>
-          <p><%= request[11]%></p>
-          </div>
         </div>
-        <% end %>
       </div>
     </main>
 
