@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="text-center">
-      <h1> Ongoing Team Requests</h1>
+      <h1>Ongoing Team Requests</h1>
         <a href="/" class="btn btn-outline-success mb-3" >View ongoing team requests</a>
         <a href="/submit_request" class="btn btn-outline-success mb-3" >Submit a team request</a>
         <a href="/resolved_requests" class="btn btn-outline-success mb-3" >View resolved team requests</a>
@@ -79,8 +79,8 @@
               <div class="card-body">
               <ul class="progressbar">
                 <li class="active">Submited</li>
-                <li class="<%= 'active' if request[12] == 'TRUE' || request[13] == 'TRUE' %>">In progress</li>
-                <li class="<%= 'active' if request[13] == 'TRUE'%>">Resolved</li>
+                <li class="<%= 'active' if request[13] == 'TRUE' || request[14] == 'TRUE' %>">In progress</li>
+                <li class="<%= 'active' if request[14] == 'TRUE'%>">Resolved</li>
               </ul>
 
               <% difference = Date.today - Date.parse(request[0])%>
@@ -94,18 +94,17 @@
 
               <i class="mb-1 text-muted text-left" >Submited by: <%=request[1]%></i>
 
-              <% if request[14].nil? %>
+              <% if request[15].nil? %>
                 <div hidden class="border border-success rounded mb-3 mt-3">
                   <h2 class="text-success text-center">Operations Response</h2>
-                  <p class="ml-3 mr-3"><%= request[14]%></p>
+                  <p class="ml-3 mr-3"><%= request[15]%></p>
                 </div>
               <% else %>
                 <div class="border border-success rounded mb-3 mt-3">
                   <h2 class="text-success text-center">Operations Response</h2>
-                  <p class="ml-3 mr-3"><%= request[14]%></p>
+                  <p class="ml-3 mr-3"><%= request[15]%></p>
                 </div>
               <% end %>
-
               <h2 class="mt-4">Client Information</h2>
               <p>Client: <%= request[3]%></p>
               <p>Client stream: <%= request[4]%></p>
@@ -116,6 +115,7 @@
               <p>Team size: <%= request[8]%></p>
               <p>Skills required: <%= request[9]%></p>
               <p>Seniority: <%= request[10]%></p>
+              <p>Executive sponsor: <%= request[12]%></p>
               <h2>Project context</h2>
               <p><%= request[11]%></p>
               </div>

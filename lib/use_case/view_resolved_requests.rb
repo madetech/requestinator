@@ -8,7 +8,7 @@ class UseCase::ViewResolvedRequests
   def execute
     resolved_requests = []
     @google_spreadsheet_gateway.all.each do |row|
-      if row[0] != "" && row[13] == "TRUE"
+      if row[0] != "" && row[14] == "TRUE"
         resolved_requests << row
       end
     end

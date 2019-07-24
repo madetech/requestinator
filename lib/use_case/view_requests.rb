@@ -8,7 +8,7 @@ class UseCase::ViewRequests
   def execute
     condensed_data = []
     @google_spreadsheet_gateway.all.each do |row|
-      if row[0] != "" && row[13] == "FALSE"
+      if row[0] != "" && row[14] == "FALSE"
         condensed_data << row
       end
     end
