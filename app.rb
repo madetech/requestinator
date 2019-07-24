@@ -17,7 +17,7 @@ use Rack::Auth::Basic, "Protected Area" do |username, password|
 end
 
 get '/' do
-  gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
+  gateway = Gateway::GoogleSpreadsheet.new
 
   response = UseCase::ViewRequests.new(
     google_spreadsheet_gateway: gateway
@@ -31,7 +31,7 @@ get '/' do
 end
 
 get '/resolved_requests' do
-  gateway = Sinatra::Application.environment == :development ? GoogleSheetsSimulator.new : Gateway::GoogleSpreadsheet.new
+  gateway = Gateway::GoogleSpreadsheet.new
 
   response = UseCase::ViewResolvedRequests.new(
     google_spreadsheet_gateway: gateway
