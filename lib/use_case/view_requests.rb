@@ -12,6 +12,6 @@ class UseCase::ViewRequests
         condensed_data << row
       end
     end
-    pp condensed_data
+    condensed_data
   end
 end
