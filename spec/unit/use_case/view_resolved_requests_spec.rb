@@ -7,13 +7,24 @@ describe UseCase::ViewResolvedRequests do
 
   it 'can show client as the first key for the data' do
     VCR.use_cassette('response') do
-      expect(response[0]).to eq(["10/07/2019 10:48:36",
-        "maysa@madetech.com",
-        "Maysa",
-        "Made Tech",
+      expect(response[0]).to eq([
+        "19/07/2019 12:02:07",
+        "george@madetech.com",
+        "George",
+        "MoJ",
         "Requestinator",
-        "2 weeks", "London Bridge", "10/10/10", "1", "Ruby", "Software Engineer",
-        "Project is bulfing stuff", "TRUE", "TRUE", "Yes all good!"])
+        "2 weeks",
+        "Manchester",
+        "10/10/10",
+        "1",
+        "React",
+        "Software Engineer",
+        "comment",
+        "s",
+        "TRUE",
+        "TRUE",
+        "Look George, I've left a comment!"
+      ])
     end
   end
 end
