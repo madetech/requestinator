@@ -67,7 +67,7 @@
       <div class="accordion" id="accordionExample">
         <div>
         <% data.each_with_index do |request, index| %>
-              <div class="card-header" id="headingOne">
+              <div class="card-header-custom  id="headingOne">
                 <h2 class="mb-0 mt-0 text-center">
                   <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%=index%>" aria-expanded="true" aria-controls="collapseOne">
                     Team request from <%= request[3]%> for <%= request[4]%>
