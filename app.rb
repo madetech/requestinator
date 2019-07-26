@@ -43,7 +43,3 @@ get '/resolved_requests' do
 
   erb :resolved_requests, locals: { data: response, summary_data: response_summary}
 end
-
-get '/submit_request' do
-  erb :submit_request
-end
